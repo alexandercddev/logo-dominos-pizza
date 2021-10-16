@@ -1,0 +1,299 @@
+$dominosRed: hsl(351, 80%, 49%);
+$dominosBlue: hsl(198, 100%, 28%);
+$dominosWhite: hsl(180, 100%, 99%);
+$heightLetter: 35px;
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: $dominosBlue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container__logo { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image {  
+    width: 200px;
+    height: 100px; 
+    border: 6px solid $dominosWhite;
+    border-radius: 15px; 
+    transform: rotate(135deg);
+
+    &::before { 
+        content: '  ';
+        width: 97px;
+        height: 100px;   
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        background: $dominosRed; 
+        position: absolute;  
+        box-shadow: 6px 0px 0px $dominosWhite;
+    } 
+    
+    &::after {
+        content: '';
+        width: 36px;
+        height: 36px;  
+        position: absolute;
+        background-color: $dominosWhite;
+        margin: {  
+            left: 32px; 
+            top: 32px;
+        };  
+        border-radius: 50px; 
+        box-shadow: 118px 18px 0px $dominosWhite,  82px -18px 0px $dominosWhite;
+    }
+} 
+
+.image__dominos {
+    margin: {
+        top: 75px;
+    };
+}
+
+.image__pizza {
+    margin: {
+        top: 15px;
+    };
+}
+
+.image__dominos, .image__pizza {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;  
+
+    &>div{ 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1px;
+
+        &.dominos__d { 
+            background-color:$dominosWhite;
+            width: 50px;
+            height: 50px; 
+            border-top: {
+                right-radius: 25px;
+                left-radius: 2px;
+            };
+            border-bottom: {
+                right-radius: 25px;
+                left-radius: 2px;
+            } 
+
+            &::after { 
+                content: ' ';
+                width: 20px;
+                height: 25px; 
+                border-top: {
+                    right-radius: 25px;
+                    left-radius: 2px;
+                };
+                border-bottom: {
+                    right-radius: 25px;
+                    left-radius: 2px;
+                } 
+                background-color: $dominosBlue;
+                position: absolute;
+            }
+        } 
+
+        &.dominos__o {
+            background-color:$dominosWhite;
+            width: $heightLetter;
+            height: $heightLetter; 
+            border-radius: 50px;
+            margin-top: 15px;
+
+            &::after {
+                content: ' ';
+                background-color: $dominosBlue;
+                width: 13px;
+                height: 13px; 
+                border-radius: 50px; 
+                position: absolute;
+            }
+        }
+
+        &.dominos__n{
+            background-color:$dominosWhite;
+            width: $heightLetter;
+            height: $heightLetter; 
+            margin-top: 15px;
+            border-top: {
+                right-radius: 25px;
+                left-radius: 45px;
+            };
+            border-bottom: {
+                right-radius: 2px;
+                left-radius: 2px;
+            } 
+
+            &::before {
+                content: ' ';
+                background-color: $dominosBlue;
+                width: 10px;
+                height: 30px; 
+                border-top: {
+                    right-radius: 25px;
+                    left-radius: 25px;
+                };
+                position: absolute;
+                margin-top: 10px;
+            }
+
+            &::after {
+                content: ' ';
+                background-color: $dominosWhite;
+                width: 10px;
+                height: $heightLetter;
+                margin-left: -25px;
+                z-index: 100;
+                border-radius: 2px;
+            }
+
+        }
+
+        &.dominos__i {
+            width: 15px;
+            height: $heightLetter;
+            background-color: $dominosWhite;
+            margin-top: 15px;
+            border-radius: 2px;
+
+            &::before {
+                content: ' ';
+                width: 15px;
+                height: 15px;
+                background-color: $dominosWhite;
+                border-radius: 50px;
+                position: absolute;
+                margin-top: -55px;
+            }
+        }
+
+        &.dominos__p {
+            background-color:$dominosWhite;
+            width: 40px;
+            height: $heightLetter; 
+            border-top: {
+                right-radius: 25px;
+                left-radius: 2px;
+            };
+            border-bottom: {
+                right-radius: 25px;
+                left-radius: 2px;
+            } 
+            margin-left: 2px;
+
+            &::before { 
+                content: ' ';
+                width: 10px;
+                height: 13px; 
+                border-top: {
+                    right-radius: 45px;
+                    left-radius: 2px;
+                };
+                border-bottom: {
+                    right-radius: 45px;
+                    left-radius: 2px;
+                } 
+                background-color: $dominosBlue;
+                position: absolute;
+            }
+
+            &::after { 
+                content: ' ';
+                width: 13px;
+                height: 48px;   
+                background-color: $dominosWhite;
+                position: absolute;
+                margin-left: -27px;
+                margin-top: 15px;
+                border-radius: 2px;
+            }
+
+        }
+
+        &.dominos__z {  
+            margin: {
+                top: 3px;
+                left: 2px;
+            }
+
+            &::before {
+                content: ' ';
+                width: 38px;
+                height: 12px;
+                position: absolute;
+                background-color: $dominosWhite; 
+                border-radius: 2px;  
+                margin: {
+                    left: 35px;
+                    top: -6px;
+                }
+                box-shadow: 0px 21px 0px $dominosWhite;
+            } 
+
+            &::after {
+                content: ' ';
+                width: 37px;
+                height: 12px;
+                position: absolute;
+                background-color: $dominosWhite; 
+                border-radius: 2px;  
+                margin: {
+                    left: 34px;
+                    top: 15px;
+                }
+                transform: rotate(-33deg);
+            }
+            
+        }
+ 
+
+        &.dominos__a {
+            margin-left: 37px;
+
+            background-color:$dominosWhite;
+            width: $heightLetter;
+            height: $heightLetter; 
+            border-radius: 50px;
+            margin-top: 15px;
+
+            &::before {
+                content: ' ';
+                background-color: $dominosBlue;
+                width: 13px;
+                height: 13px; 
+                border-radius: 50px; 
+                position: absolute;
+                margin-left: 5px;
+            }
+
+            &::after {
+                content: ' ';
+                background-color: $dominosWhite;
+                width: 13px;
+                height: $heightLetter; 
+                border-radius: 2px; 
+                position: absolute;
+                margin-left: 32px;
+
+            }
+        }
+    }
+}
