@@ -14,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    height: 100vh; 
 }
 
 .container__logo { 
@@ -22,6 +22,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 100px;
 }
 
 .image {  
@@ -30,6 +31,7 @@ body {
     border: 6px solid $dominosWhite;
     border-radius: 15px; 
     transform: rotate(135deg);
+    box-shadow: 5px -5px 10px hsla(0, 0%, 0%, 0.5);
 
     &::before { 
         content: '  ';
@@ -69,7 +71,7 @@ body {
     };
 }
 
-.image__dominos, .image__pizza {
+.image__dominos {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -92,8 +94,7 @@ body {
             border-bottom: {
                 right-radius: 25px;
                 left-radius: 2px;
-            } 
-
+            }  
             &::after { 
                 content: ' ';
                 width: 20px;
@@ -107,7 +108,7 @@ body {
                     left-radius: 2px;
                 } 
                 background-color: $dominosBlue;
-                position: absolute;
+                position: absolute; 
             }
         } 
 
@@ -116,7 +117,7 @@ body {
             width: $heightLetter;
             height: $heightLetter; 
             border-radius: 50px;
-            margin-top: 15px;
+            margin-top: 15px; 
 
             &::after {
                 content: ' ';
@@ -125,6 +126,66 @@ body {
                 height: 13px; 
                 border-radius: 50px; 
                 position: absolute;
+            }
+        }
+
+        &.dominos__m{
+            background-color:$dominosWhite;
+            width: $heightLetter;
+            height: $heightLetter; 
+            margin-top: 15px;
+            border-top: {
+                right-radius: 25px;
+                left-radius: 45px;
+            };
+            border-bottom: {
+                right-radius: 2px;
+                left-radius: 2px;
+            }  
+            margin-right: 26px; 
+            box-shadow: 25px 0px 0px $dominosWhite;
+
+            &::before {
+                content: ' ';
+                background-color: $dominosBlue;
+                width: 10px;
+                height: 25px; 
+                border-top: {
+                    right-radius: 25px;
+                    left-radius: 25px;
+                };
+                position: absolute;
+                margin-top: 10px; 
+                box-shadow: 25px 0px 0px $dominosBlue;
+            }
+
+            &::after {
+                content: ' ';
+                background-color: $dominosWhite;
+                width: 10px;
+                height: $heightLetter;
+                margin-left: -25px;
+                z-index: 100;
+                border-radius: 2px;
+            }
+
+        }
+
+        &.dominos__i {
+            width: 12px;
+            height: $heightLetter;
+            background-color: $dominosWhite;
+            margin-top: 15px;
+            border-radius: 2px;
+
+            &::before {
+                content: ' ';
+                width: 12px;
+                height: 12px;
+                background-color: $dominosWhite;
+                border-radius: 50px;
+                position: absolute;
+                margin-top: -55px;
             }
         }
 
@@ -165,24 +226,109 @@ body {
                 border-radius: 2px;
             }
 
+        } 
+
+        &.dominos__apostrofe {
+            width: 13px;
+            height: 13px;
+            background-color: $dominosWhite;
+            border-radius: 50px;
+
+            &::after {
+                content: ' ';
+                width: 4px;
+                height: 10px;
+                background-color: $dominosWhite;
+                border-radius: 50%;
+                position: absolute;
+                margin: {
+                    top: 15px;
+                    left: 0px;
+                };
+                border-radius: 90% 0 90% 10%;
+                transform: rotate(35deg);
+            }
         }
 
-        &.dominos__i {
-            width: 12px;
-            height: $heightLetter;
-            background-color: $dominosWhite;
-            margin-top: 15px;
-            border-radius: 2px;
+        &.dominos__s {
+            display: flex;
+            flex-direction: column;
+            margin-top: 12px;
+            margin-bottom: 0px;
+            transform: rotate(-12deg);
 
-            &::before {
-                content: ' ';
-                width: 12px;
-                height: 12px;
+            &>div.dominos__top {
+                width: 30px;
+                height: 20px;
                 background-color: $dominosWhite;
-                border-radius: 50px;
-                position: absolute;
-                margin-top: -55px;
+                border-radius: 165% 200% 0% 135%;   
+
+                &::before {
+                    content: ' ';
+                    width: 15px;
+                    height: 3px;
+                    background-color: $dominosBlue;
+                    position: absolute;
+                    margin: {
+                        top: 16px;
+                        left: 16px;
+                    };
+                    transform: rotate(35deg);
+                    border-radius: 6000% 0% 0% 200%;
+                }
+
+                &::after {
+                    content: ' ';
+                    width: 15px;
+                    height: 5px;
+                    background-color: $dominosBlue;
+                    position: absolute;
+                    margin: {
+                        top: 12px;
+                        left: 25px;
+                    };
+                    transform: rotate(-45deg);
+
+                }
+
             }
+
+            &>div.dominos__bottom {
+                width: 30px;
+                height: 20px;
+                background-color: $dominosWhite;
+                border-radius: 0% 165% 135% 200%;    
+                margin-top: -2px;
+                
+                &::before {
+                    content: ' ';
+                    width: 15px;
+                    height: 3px;
+                    background-color: $dominosBlue;
+                    position: absolute;
+                    margin: {
+                        top: 0px;
+                        left: -4px; 
+                    };
+                    transform: rotate(35deg);
+                    border-radius: 0% 200% 0% 0%;    
+                }
+
+                &::after {
+                    content: ' ';
+                    width: 15px;
+                    height: 5px;
+                    background-color: $dominosBlue;
+                    position: absolute;
+                    margin: {
+                        top: 4px;
+                        left: -10px; 
+                    };
+                    transform: rotate(-45deg);
+
+                }
+            }
+             
         }
 
         &.dominos__p {
@@ -234,7 +380,7 @@ body {
             background-color: $dominosWhite; 
             border-radius: 2px;  
             margin: { 
-                top: 16px;
+                top: 17px;
             }
             box-shadow: 0px 21px 0px $dominosWhite;
   
@@ -252,7 +398,6 @@ body {
             }
             
         }
- 
 
         &.dominos__a { 
             background-color:$dominosWhite;
@@ -279,6 +424,123 @@ body {
                 border-radius: 2px; 
                 position: absolute;
                 margin-left: 32px; 
+            }
+        }
+
+        &.dominos__r {
+            width: 8px;
+            height: 8px;
+            border: 1px solid $dominosWhite;
+            border-radius: 50%;
+            margin: {
+                top: 15px;
+                left: 5px;
+            }; 
+
+            &::before {
+                content: '';
+                width: 1px;
+                height: 6px;
+                position: absolute;
+                background-color: $dominosWhite;
+                margin-left: -3px;
+            }
+
+            &::after {
+                content: '';
+                width: 4px;
+                height: 4px;
+                position: absolute;
+                background-color: $dominosWhite; 
+                margin-top: -2px;
+                border-radius: 0% 50% 50% 0%; 
+            }
+
+            &>div.dominos__r__into {
+                width: 2px;
+                height: 2px;
+                position: absolute;
+                background-color: $dominosBlue; 
+                margin-top: -2px;
+                border-radius: 0% 50% 50% 0%; 
+                z-index: 100;
+
+                &::before {
+                    content: '';
+                    width: 1px;
+                    height: 3px;
+                    position: absolute;
+                    background-color: $dominosWhite;  
+                    margin-top: 2px;
+                    margin-left: 1px;
+                    transform: rotate(-40deg);
+                }
+            }
+        }
+    }
+}
+
+.image__tm {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 8px;    
+    margin-top: 35px;
+
+    &>div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2px;
+
+
+        &.dominos__t { 
+            width: 1px;
+            height: 6px; 
+            background-color: $dominosWhite;  
+
+            &::before {
+                content: '';
+                width: 6px;
+                height: 1px;
+                position: absolute;
+                background-color: $dominosWhite;  
+                margin-top: -5px;
+            }
+
+        }
+
+        &.dominos__m {
+            width: 1px;
+            height: 6px; 
+            background-color: $dominosWhite;  
+            box-shadow: 6px 0px 0px $dominosWhite;
+
+            &::before {
+                content: '';
+                width: 1px;
+                height: 4px; 
+                background-color: $dominosWhite; 
+                margin: {
+                    left: 4px;
+                    top: -2px;
+                };
+                position: absolute;
+                transform: rotate(-45deg);
+            }
+
+            &::after {
+                content: '';
+                width: 1px;
+                height: 4px; 
+                background-color: $dominosWhite;  
+                margin: {
+                    left: 8px;
+                    top: -2px;
+                };
+                position: absolute;
+                transform: rotate(45deg);
+                
             }
         }
     }
