@@ -84,7 +84,7 @@ body {
         &.dominos__d { 
             background-color:$dominosWhite;
             width: 50px;
-            height: 50px; 
+            height: 49px; 
             border-top: {
                 right-radius: 25px;
                 left-radius: 2px;
@@ -229,7 +229,7 @@ body {
         }
 
         &.dominos__z {   
-            width: 38px;
+            width: 35px;
             height: 12px; 
             background-color: $dominosWhite; 
             border-radius: 2px;  
@@ -240,7 +240,7 @@ body {
   
             &::after {
                 content: ' ';
-                width: 37px;
+                width: 35px;
                 height: 12px;
                 position: absolute;
                 background-color: $dominosWhite; 
@@ -248,7 +248,7 @@ body {
                 margin: { 
                     top: 21px;
                 }
-                transform: rotate(-33deg);
+                transform: rotate(-36deg);
             }
             
         }
